@@ -12,12 +12,14 @@ int sensor = 2;
 int led = 3;
 int valor;
 
+//setup
 void setup() {
     Serial.begin(9600);
     pinMode(sensor, INPUT);
     pinMode(led, OUTPUT);
 }
 
+//loop
 void loop() {
     valor = digitalRead(sensor);
     digitalWrite(led,valor);
