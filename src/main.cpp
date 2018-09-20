@@ -10,11 +10,18 @@
 //Variaveis e constantes
 int sensor = 2;
 int led = 3;
+int valor;
 
 void setup() {
-    // put your setup code here, to run once:
+    Serial.begin(9600);
+    pinMode(sensor, INPUT);
+    pinMode(led, OUTPUT);
 }
 
 void loop() {
-    // put your main code here, to run repeatedly:
+    valor = digitalRead(sensor);
+    digitalWrite(led,valor);
+    Serial.print("O valor do sensor é: ");
+    Serial.println(valor);
+    delay(2000);
 }
